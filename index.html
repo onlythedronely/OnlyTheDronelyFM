@@ -81,6 +81,22 @@
       color: #ccc;
       border-top: 2px solid #fbbf24;
     }
+
+    .player-wrapper {
+      position: relative;
+      display: inline-block;
+      margin: 20px auto;
+    }
+    .player-prompt {
+      position: absolute;
+      top: -30px;
+      width: 100%;
+      text-align: center;
+      font-size: 1rem;
+      color: #fbbf24;
+      font-weight: bold;
+    }
+
 </style>
 </head>
 <body>
@@ -94,7 +110,12 @@
   </div>
 
 
-  <iframe src="https://www.youtube.com/embed/live_stream?channel=UC1C_J4AkUBzmG3VAExeh7BQ" allowfullscreen></iframe>
+  
+  <div class="player-wrapper">
+    <div class="player-prompt">▶ Tap play to start the livestream 🎵</div>
+    <iframe src="https://www.youtube.com/embed/live_stream?channel=UC1C_J4AkUBzmG3VAExeh7BQ" allowfullscreen></iframe>
+  </div>
+
 
   <div class="buttons">
     <a href="https://www.tiktok.com/@onlythedronely" target="_blank">🎵 Follow on TikTok</a>
