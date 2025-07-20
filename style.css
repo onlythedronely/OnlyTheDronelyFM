@@ -1,0 +1,61 @@
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header, nav, footer {
+  background-color: #111;
+  text-align: center;
+  padding: 1rem;
+}
+
+header img {
+  max-width: 150px;
+  margin-bottom: 0.5rem;
+}
+
+nav a {
+  margin: 0 1rem;
+  color: #f00; /* red */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #ff0; /* yellow */
+}
+
+section {
+  padding: 2rem;
+  border-bottom: 2px solid #090;
+}
+
+h1, h2 {
+  color: #0f0; /* green */
+}
+
+form {
+  max-width: 500px;
+  margin: auto;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  padding: 0.75rem 2rem;
+  background: #ff0;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
