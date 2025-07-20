@@ -20,13 +20,13 @@ header img {
 
 nav a {
   margin: 0 1rem;
-  color: #f00; /* red */
+  color: #f00;
   text-decoration: none;
   font-weight: bold;
 }
 
 nav a:hover {
-  color: #ff0; /* yellow */
+  color: #ff0;
 }
 
 section {
@@ -35,7 +35,7 @@ section {
 }
 
 h1, h2 {
-  color: #0f0; /* green */
+  color: #0f0;
 }
 
 form {
