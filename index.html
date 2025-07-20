@@ -4,133 +4,100 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OnlyTheDronely FM</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
   <style>
     body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
       margin: 0;
-      font-family: 'Rubik', sans-serif;
-      background: linear-gradient(135deg, #1b1b1b 0%, #111 100%);
-      color: #fff;
+      padding: 0;
+    }
+    header, nav, footer {
+      background-color: #111;
+      padding: 1rem;
       text-align: center;
     }
-    header {
-      padding: 40px 20px 20px 20px;
-      background: linear-gradient(to right, #e3342f, #fbbf24, #38a169);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    }
-    header img {
-      max-width: 180px;
-      border-radius: 20px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.5);
-    }
-    h1 {
-      margin: 15px 0 5px;
-      font-size: 3rem;
-      color: #fff;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-    }
-    p {
-      margin-top: 0;
-      font-size: 1.2rem;
-      color: #eee;
-    }
-    .now-playing {
-      background: #fbbf24;
-      color: #111;
-      padding: 15px;
-      font-size: 1.1em;
-      font-weight: bold;
-      box-shadow: 0 0 8px rgba(0,0,0,0.3);
-    }
-    iframe {
-      width: 90%;
-      max-width: 900px;
-      height: 480px;
-      margin: 30px auto;
-      border: none;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.6);
-    }
-    .buttons {
-      margin-top: 30px;
-    }
-    .buttons a {
+    nav a {
+      margin: 0 1rem;
+      color: #0f0;
       text-decoration: none;
-      display: inline-block;
-      background: #38a169;
-      color: white;
-      padding: 14px 28px;
-      margin: 10px;
-      border-radius: 40px;
-      font-weight: bold;
-      font-size: 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transition: background 0.3s ease;
     }
-    .buttons a:hover {
-      background: #2f855a;
+    section {
+      padding: 2rem;
     }
-    .chatbox {
-      margin-top: 40px;
+    form {
+      max-width: 500px;
+      margin: auto;
     }
-    footer {
-      margin-top: 60px;
-      padding: 20px;
-      font-size: 0.9em;
-      background: #000;
-      color: #ccc;
-      border-top: 2px solid #fbbf24;
-    }
-
-    .player-wrapper {
-      position: relative;
-      display: inline-block;
-      margin: 40px auto;
-    }
-    .player-prompt {
-      position: absolute;
-      top: -45px;
+    input, textarea {
       width: 100%;
-      text-align: center;
-      font-size: 1.1rem;
-      color: #fbbf24;
-      font-weight: bold;
-      background: #111;
-      padding: 5px 0;
-      border-radius: 10px;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      border: none;
+      border-radius: 5px;
     }
-
-</style>
+    button {
+      padding: 0.75rem 2rem;
+      background: #0f0;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <img src="onlythedronely-fm-logo.png" alt="OnlyTheDronely FM Logo" />
     <h1>OnlyTheDronely FM</h1>
-    <p>Streaming Reggae, Lovers Rock, Ska & Drone Vibes 24/7</p>
+    <p>Classic Reggae from the Skies to the Streets</p>
   </header>
-  <div class="now-playing">
-    🎵 <strong>Now Playing:</strong> Reggae & Drone Selections – Live on OnlyTheDronely FM
-  </div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
+  <section id="home">
+    <h2>Welcome</h2>
+    <p>Streaming reggae, lovers rock and sound system vibes direct from South London. TikTok powered. Vinyl inspired. Stay locked in.</p>
+  </section>
 
-  
-  <div class="player-wrapper">
-    <div class="player-prompt">▶ Tap play to start the livestream 🎵</div>
-    <iframe src="https://www.youtube.com/embed/live_stream?channel=UC1C_J4AkUBzmG3VAExeh7BQ" allowfullscreen></iframe>
-  </div>
+  <section id="about">
+    <h2>About</h2>
+    <p>OnlyTheDronely FM brings back the golden age of reggae with aerial visuals and timeless sound. We blend London’s street energy with vintage lovers rock, dub, ska, and more. Followed by thousands on TikTok for sound system nostalgia, stories, and vibes.</p>
+  </section>
 
+  <section id="schedule">
+    <h2>Broadcast Schedule</h2>
+    <ul>
+      <li><strong>Sunday:</strong> Lovers Rock Morning – 9AM</li>
+      <li><strong>Monday:</strong> Roots & Dub Rewind – 6PM</li>
+      <li><strong>Friday:</strong> Vinyl Night – 8PM</li>
+    </ul>
+    <p>Full programming coming soon – stay tuned.</p>
+  </section>
 
-  <div class="buttons">
-    <a href="https://www.tiktok.com/@onlythedronely" target="_blank">🎵 Follow on TikTok</a>
-    <a href="https://paypal.me/OnlyTheDronely?country.x=GB&locale.x=en_GB" target="_blank">☕ Tip the DJ</a>
-  </div>
+  <section id="contact">
+    <h2>Contact</h2>
+    <form action="https://formspree.io/f/xjvndbjo" method="POST">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required />
 
-  <div class="chatbox">
-    <iframe src="https://tlk.io/onlythedronely" width="90%" height="300" frameborder="0"></iframe>
-  </div>
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+  </section>
 
   <footer>
-    &copy; 2025 OnlyTheDronely FM – Powered by Love, Vinyl & Vibes.
+    <p>© 2025 OnlyTheDronely FM | Reggae to the world 💚💛❤️</p>
+    <p><a href="mailto:liddlecom@aol.com" style="color: #0f0">Email us</a></p>
   </footer>
 </body>
 </html>
