@@ -2,46 +2,48 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
-  color: #f0f0f0;
+  background: linear-gradient(to bottom, #0c0c0c, #1d1d1d);
+  color: #fafafa;
 }
 
 header {
-  background: linear-gradient(to right, #f12711, #f5af19);
+  background: linear-gradient(to right, #ff0000, #ffcc00, #00cc44);
+  color: #fff;
   text-align: center;
-  padding: 2rem 1rem;
-  color: #111;
+  padding: 2.5rem 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 header img {
-  max-width: 130px;
-  margin-bottom: 0.75rem;
+  max-width: 140px;
   border-radius: 50%;
-  border: 3px solid #fff;
+  margin-bottom: 0.5rem;
+  border: 4px solid white;
 }
 
 nav {
-  background-color: #1e1e1e;
+  background-color: #111;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  padding: 1rem 0;
+  justify-content: center;
+  padding: 1rem;
 }
 
 nav a {
   margin: 0.5rem 1rem;
-  color: #ffe600;
-  text-decoration: none;
+  color: #ffcc00;
   font-weight: bold;
-  transition: color 0.3s ease;
+  text-decoration: none;
+  transition: color 0.3s, text-shadow 0.3s;
 }
 
 nav a:hover {
   color: #00ff88;
+  text-shadow: 0 0 5px #00ff88;
 }
 
 section {
-  padding: 2.5rem 1.5rem;
+  padding: 3rem 1.5rem;
   max-width: 1000px;
   margin: auto;
   border-bottom: 1px solid #333;
@@ -49,6 +51,10 @@ section {
 
 h1, h2 {
   color: #00ff88;
+}
+
+ul {
+  padding-left: 1.2rem;
 }
 
 form {
@@ -59,26 +65,27 @@ form {
 }
 
 input, textarea {
-  padding: 0.75rem;
+  padding: 0.8rem;
   margin-bottom: 1rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   background-color: #333;
   color: #fff;
 }
 
 button {
-  background: #ffe600;
-  color: #000;
-  padding: 0.75rem;
+  background: #ffcc00;
+  color: #111;
+  padding: 0.8rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
+  transition: background 0.3s;
 }
 
 button:hover {
-  background: #ffc107;
+  background: #ffaa00;
 }
 
 .video-grid {
@@ -94,12 +101,14 @@ iframe.tiktok-embed {
   max-width: 360px;
   height: 640px;
   border: none;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
 }
 
 footer {
-  background-color: #1a1a1a;
+  background-color: #111;
   text-align: center;
-  padding: 2rem 1rem;
-  color: #ccc;
+  padding: 2rem;
+  color: #aaa;
   font-size: 0.9rem;
 }
