@@ -6,6 +6,57 @@
   <title>OnlyTheDronely </title>
   <link rel="stylesheet" href="style.css" />
   <script async src="https://www.tiktok.com/embed.js"></script>
+  <style>
+    #memories {
+      background: #fff8e1;
+      padding: 2em;
+      border-top: 5px solid #cc0000;
+      border-bottom: 5px solid #007847;
+      font-family: 'Verdana', sans-serif;
+    }
+    #memories form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      background: #f0f0f0;
+      padding: 1.5em;
+      border-radius: 10px;
+      border: 2px solid #cc0000;
+    }
+    #memories input,
+    #memories textarea {
+      padding: 0.8em;
+      border-radius: 8px;
+      border: 1px solid #999;
+      font-size: 1em;
+    }
+    #memories input:focus,
+    #memories textarea:focus {
+      border-color: #fcd116;
+      outline: none;
+    }
+    #memories button {
+      padding: 1em;
+      background: linear-gradient(90deg, #cc0000, #fcd116, #007847);
+      color: white;
+      font-weight: bold;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #memories-list div {
+      border-left: 5px solid #007847;
+      padding-left: 1em;
+      margin-bottom: 1em;
+      background: #fff;
+      padding: 1em;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -39,7 +90,6 @@
     <a href="#contact">Contact</a>
   </nav>
 
-
   <section id="about" style="
   max-width: 750px;
   margin: 4em auto;
@@ -53,25 +103,39 @@
 ">
   <h2 style="color: #ffe600;">🎧 About OnlyTheDronely </h2>
   <p>
-    Welcome to <strong>OnlyTheDronely FM</strong>, where reggae memories take flight. This is more than just a blog or a TikTok account it’s a digital home for the sounds that shaped generations. We honour the legends of reggae, lovers rock, ska, and sound system culture while connecting them with the world today through storytelling and visuals.
-  </p>
-  <p>
-    The heart of this project is simple: every track has a memory, every lyric a moment. Whether it's your mum dancing in the living room to Dennis Brown, or pirate radio crackling out of a third-floor flat in Brixton, OnlyTheDronely FM captures those feelings and preserves them for new ears.
-  </p>
-  <p>
-    We dig deep into the roots breaking down the history behind iconic tracks, unearthing forgotten gems, and reflecting on the cultural importance of Caribbean music in the UK. Our videos pair these tunes with carefully captured visuals that match the rhythm, mood, and message of each song.
-  </p>
-  <p>
-    If you’ve ever rewound a cassette to catch that intro again, or argued over who had the better lovers rock anthem you’re in the right place.
-  </p>
-  <p>
-    Follow <strong>@onlythedronely</strong> on TikTok and YouTube for more — and if a tune sparks a memory, drop us a comment. We’re building a living archive powered by people who were there, and people just discovering the vibes.
+    Welcome to <strong>OnlyTheDronely FM</strong>, where reggae memories take flight...
   </p>
   <p style="font-style: italic; color: #bbb;">
     Every sound deserves a view.
   </p>
 </section>
 
+  <section id="memories">
+    <h2 style="text-align:center; font-size:2em; color:#cc0000;">🎶 Share Your Reggae or Ska Memory 🎶</h2>
+    <p style="text-align:center; max-width:700px; margin:0 auto 2em auto; font-size:1.1em; color:#333;">
+      Drop a story, a shoutout, or even a lyric that brings it all back. This is your space to keep the vibes alive 💛
+    </p>
+    <form name="reggae-memories" method="POST" data-netlify="true" enctype="multipart/form-data">
+      <input type="text" name="name" placeholder="Your name or nickname" required>
+      <input type="text" name="location" placeholder="Where it happened (optional)">
+      <textarea name="memory" placeholder="Tell us your story..." rows="6" required></textarea>
+      <label>
+        <input type="checkbox" name="videoPermission" style="margin-right:0.5em;">
+        Can we feature this memory in a video?
+      </label>
+      <label>
+        Upload a photo or audio clip from back in the day (optional):<br>
+        <input type="file" name="media" accept="image/*,audio/*" style="margin-top:0.5em;">
+      </label>
+      <button type="submit">Submit Your Memory</button>
+    </form>
+    <div id="recent-memories" style="margin-top:3em; max-width:700px; margin-left:auto; margin-right:auto;">
+      <h3 style="text-align:center; color:#222;">📖 Recent Memories</h3>
+      <div id="memories-list">
+        <p>Loading memories...</p>
+      </div>
+    </div>
+  </section>
 
   <section id="videos">
     <h2>Latest TikToks</h2>
@@ -95,5 +159,22 @@
   <footer>
     <p>© 2025 OnlyTheDronely FM | Reggae to the world 💚💛❤️</p>
   </footer>
+
+  <script>
+    fetch('/memories.json')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('memories-list');
+        container.innerHTML = '';
+        data.memories.forEach(mem => {
+          const div = document.createElement('div');
+          div.innerHTML = `<p><strong>${mem.name} from ${mem.location || 'Unknown'}:</strong> "${mem.memory}"</p>`;
+          container.appendChild(div);
+        });
+      })
+      .catch(err => {
+        document.getElementById('memories-list').innerHTML = '<p>Could not load memories. Please try again later.</p>';
+      });
+  </script>
 </body>
 </html>
