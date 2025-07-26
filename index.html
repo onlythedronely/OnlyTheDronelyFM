@@ -3,28 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OnlyTheDronely </title>
+  <title>OnlyTheDronely</title>
   <link rel="stylesheet" href="style.css" />
   <script async src="https://www.tiktok.com/embed.js"></script>
   <style>
-    #memories {
-      background: #fff8e1;
+    body {
+      background: #f9f9f9;
+      font-family: 'Verdana', sans-serif;
+    }
+
+    section#memories {
+      background: #fcf7e8;
       padding: 2em;
       border-top: 5px solid #cc0000;
       border-bottom: 5px solid #007847;
-      font-family: 'Verdana', sans-serif;
     }
+
+    section#memories h2,
+    section#memories h3 {
+      color: #cc0000;
+    }
+
+    section#memories p {
+      color: #222;
+    }
+
     #memories form {
       max-width: 600px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
       gap: 1em;
-      background: #f0f0f0;
+      background: #fff;
       padding: 1.5em;
       border-radius: 10px;
-      border: 2px solid #cc0000;
+      border: 2px solid #fcd116;
     }
+
     #memories input,
     #memories textarea {
       padding: 0.8em;
@@ -32,11 +47,13 @@
       border: 1px solid #999;
       font-size: 1em;
     }
+
     #memories input:focus,
     #memories textarea:focus {
       border-color: #fcd116;
       outline: none;
     }
+
     #memories button {
       padding: 1em;
       background: linear-gradient(90deg, #cc0000, #fcd116, #007847);
@@ -47,6 +64,7 @@
       border-radius: 8px;
       cursor: pointer;
     }
+
     #memories-list div {
       border-left: 5px solid #007847;
       padding-left: 1em;
@@ -55,126 +73,50 @@
       padding: 1em;
       border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      color: #111;
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="Onlythedronelylogo.png" alt="OnlyTheDronely Logo" />
-    <h1>OnlyTheDronely </h1>
-    <p>Classic Reggae from the Skies to the Streets</p>
-  </header>
 
-  <section id="donate" style="text-align: center; background: #222; padding: 2rem;">
-    <h2 style="color: #ffe600;">Support the Movement</h2>
-    <p style="color: #ccc; max-width: 600px; margin: auto; font-size: 1.1rem;">
-      If you're loving the vibes, help keep the station flying high. Every tip helps us keep the music alive and independent.
-    </p>
-    <a href="https://paypal.me/OnlyTheDronely?country.x=GB&locale.x=en_GB" target="_blank" style="
-      display: inline-block;
-      background: linear-gradient(to right, #ff0000, #ffcc00, #00cc44);
-      color: black;
-      font-weight: bold;
-      padding: 0.9rem 1.5rem;
-      border-radius: 8px;
-      text-decoration: none;
-      margin-top: 1rem;
-      box-shadow: 0 0 10px #000;
-    ">Send a Tip via PayPal</a>
-  </section>
+<header>
+  <img src="Onlythedronelylogo.png" alt="OnlyTheDronely Logo" />
+  <h1>OnlyTheDronely</h1>
+  <p>Classic Reggae from the Skies to the Streets</p>
+</header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#videos">Videos</a>
-    <a href="blog.html">Blog</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section id="about" style="
-  max-width: 750px;
-  margin: 4em auto;
-  padding: 2em;
-  background: #111;
-  color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
-  font-family: Georgia, serif;
-  line-height: 1.6;
-">
-  <h2 style="color: #ffe600;">🎧 About OnlyTheDronely </h2>
-  <p>
-    Welcome to <strong>OnlyTheDronely FM</strong>, where reggae memories take flight...
+<section id="memories">
+  <h2 style="text-align:center; font-size:2em;">🎶 Share Your Reggae or Ska Memory 🎶</h2>
+  <p style="text-align:center; max-width:700px; margin:0 auto 2em auto; font-size:1.1em;">
+    Drop a story, a shoutout, or even a lyric that brings it all back. This is your space to keep the vibes alive 💛
   </p>
-  <p style="font-style: italic; color: #bbb;">
-    Every sound deserves a view.
-  </p>
+  <form name="reggae-memories" method="POST" data-netlify="true" enctype="multipart/form-data">
+    <input type="text" name="name" placeholder="Your name or nickname" required>
+    <input type="text" name="location" placeholder="Where it happened (optional)">
+    <textarea name="memory" placeholder="Tell us your story..." rows="6" required></textarea>
+    <label>
+      <input type="checkbox" name="videoPermission" style="margin-right:0.5em;">
+      Can we feature this memory in a video?
+    </label>
+    <label>
+      Upload a photo or audio clip from back in the day (optional):<br>
+      <input type="file" name="media" accept="image/*,audio/*" style="margin-top:0.5em;">
+    </label>
+    <button type="submit">Submit Your Memory</button>
+  </form>
+
+  <div id="recent-memories" style="margin-top:3em; max-width:700px; margin-left:auto; margin-right:auto;">
+    <h3 style="text-align:center;">📖 Recent Memories</h3>
+    <div id="memories-list">
+      <div><p><strong>Maxine from Tooting:</strong> "I remember my uncle blasting Alton Ellis on a Friday night with the windows open. That bassline would shake the street!"</p></div>
+      <div><p><strong>Trevor from Peckham:</strong> "Danced all night to The Specials in '81. Never knew that night would stay with me forever."</p></div>
+      <div><p><strong>Paul from Hackney:</strong> "Carnival ’88. First time I saw a real sound system set up. The bass hit me in the chest and I was hooked for life."</p></div>
+      <div><p><strong>Sharon from Brixton:</strong> "My mum would play Janet Kay on Sunday mornings while cleaning — the whole block could hear 'Silly Games' through the windows."</p></div>
+      <div><p><strong>Lenny from Harlesden:</strong> "Used to sneak into blues parties when I was 15 — heard King Tubby on vinyl and it changed everything."</p></div>
+      <div><p><strong>Bev from Streatham:</strong> "We had cassettes of Saxon sound clashing Unity — rewinding the tape over and over just to hear that one dubplate drop again."</p></div>
+    </div>
+  </div>
 </section>
 
-  <section id="memories">
-    <h2 style="text-align:center; font-size:2em; color:#cc0000;">🎶 Share Your Reggae or Ska Memory 🎶</h2>
-    <p style="text-align:center; max-width:700px; margin:0 auto 2em auto; font-size:1.1em; color:#333;">
-      Drop a story, a shoutout, or even a lyric that brings it all back. This is your space to keep the vibes alive 💛
-    </p>
-    <form name="reggae-memories" method="POST" data-netlify="true" enctype="multipart/form-data">
-      <input type="text" name="name" placeholder="Your name or nickname" required>
-      <input type="text" name="location" placeholder="Where it happened (optional)">
-      <textarea name="memory" placeholder="Tell us your story..." rows="6" required></textarea>
-      <label>
-        <input type="checkbox" name="videoPermission" style="margin-right:0.5em;">
-        Can we feature this memory in a video?
-      </label>
-      <label>
-        Upload a photo or audio clip from back in the day (optional):<br>
-        <input type="file" name="media" accept="image/*,audio/*" style="margin-top:0.5em;">
-      </label>
-      <button type="submit">Submit Your Memory</button>
-    </form>
-    <div id="recent-memories" style="margin-top:3em; max-width:700px; margin-left:auto; margin-right:auto;">
-      <h3 style="text-align:center; color:#222;">📖 Recent Memories</h3>
-      <div id="memories-list">
-        <p>Loading memories...</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="videos">
-    <h2>Latest TikToks</h2>
-    <div class="video-grid">
-      <iframe class="tiktok-embed" src="https://www.tiktok.com/embed/v2/7519615555288976662" allowfullscreen></iframe>
-      <iframe class="tiktok-embed" src="https://www.tiktok.com/embed/v2/7525545641511095574" allowfullscreen></iframe>
-      <iframe class="tiktok-embed" src="https://www.tiktok.com/embed/v2/7519252607882267926" allowfullscreen></iframe>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <form action="https://formspree.io/f/mrblelzd" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>© 2025 OnlyTheDronely FM | Reggae to the world 💚💛❤️</p>
-  </footer>
-
-  <script>
-    fetch('/memories.json')
-      .then(res => res.json())
-      .then(data => {
-        const container = document.getElementById('memories-list');
-        container.innerHTML = '';
-        data.memories.forEach(mem => {
-          const div = document.createElement('div');
-          div.innerHTML = `<p><strong>${mem.name} from ${mem.location || 'Unknown'}:</strong> "${mem.memory}"</p>`;
-          container.appendChild(div);
-        });
-      })
-      .catch(err => {
-        document.getElementById('memories-list').innerHTML = '<p>Could not load memories. Please try again later.</p>';
-      });
-  </script>
 </body>
 </html>
