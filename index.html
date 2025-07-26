@@ -4,54 +4,70 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OnlyTheDronely</title>
-  <link rel="stylesheet" href="style.css" />
   <script async src="https://www.tiktok.com/embed.js"></script>
   <style>
     html { scroll-behavior: smooth; }
     body {
-      background: #f9f9f9;
+      background: #fffdf5;
       font-family: 'Verdana', sans-serif;
       margin: 0;
       padding: 0;
+      color: #222;
     }
-    section#memories {
-      background: url('vinyl-texture.jpg') no-repeat center center / cover;
+
+    section {
       padding: 2em;
+    }
+
+    section#about {
+      background: #222;
+      color: #fff;
+    }
+
+    section#donate, section#contact {
+      background: #f6f6f6;
+    }
+
+    section#videos {
+      background: #fff;
+    }
+
+    section#memories {
+      background: #333;
+      color: #fff;
       border-top: 5px solid #cc0000;
       border-bottom: 5px solid #007847;
     }
-    section#about {
-      background: url('flyer-bg.jpg') no-repeat center center / cover;
-      color: #fff;
-    }
-    section#donate, section#contact, section#videos {
-      background: #fcf7e8;
-    }
+
     section#memories h2, section#memories h3 {
       color: #ffe600;
       text-shadow: 1px 1px 2px #000;
     }
-    section#memories p {
-      color: #fff;
-      text-shadow: 1px 1px 2px #000;
+
+    #memories p {
+      color: #eee;
     }
+
     #memories form {
+      background: #fff;
+      color: #000;
       max-width: 600px;
       margin: 0 auto;
+      padding: 1.5em;
+      border-radius: 10px;
+      border: 2px solid #007847;
       display: flex;
       flex-direction: column;
       gap: 1em;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 1.5em;
-      border-radius: 10px;
-      border: 2px solid #fcd116;
     }
+
     #memories input, #memories textarea {
       padding: 0.8em;
       border-radius: 8px;
-      border: 1px solid #999;
+      border: 1px solid #bbb;
       font-size: 1em;
     }
+
     #memories button {
       padding: 1em;
       background: linear-gradient(90deg, #cc0000, #fcd116, #007847);
@@ -62,6 +78,11 @@
       border-radius: 8px;
       cursor: pointer;
     }
+
+    #memories-list {
+      color: #111;
+    }
+
     #memories-list div {
       border-left: 5px solid #007847;
       padding-left: 1em;
@@ -70,57 +91,73 @@
       padding: 1em;
       border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      color: #111;
     }
+
     nav {
       background: #111;
       padding: 1em;
       text-align: center;
     }
+
     nav a {
       color: #ffe600;
       margin: 0 1em;
       text-decoration: none;
       font-weight: bold;
     }
+
     header {
       text-align: center;
       padding: 2em;
       background: #111;
       color: #fff;
     }
-    header img {
-      max-width: 150px;
-    }
+
     footer {
       text-align: center;
       padding: 2em;
       background: #111;
       color: #fff;
     }
+
     .video-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1em;
       padding: 1em;
     }
+
     form input, form textarea {
       width: 100%;
+    }
+
+    a.button-link {
+      display: inline-block;
+      background: linear-gradient(to right, #cc0000, #fcd116, #007847);
+      color: #fff;
+      padding: 0.9rem 1.5rem;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    a.button-link:hover {
+      opacity: 0.9;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <img src="Onlythedronelylogo.png" alt="OnlyTheDronely Logo" />
   <h1>OnlyTheDronely</h1>
   <p>Classic Reggae from the Skies to the Streets</p>
 </header>
 
 <section id="donate">
-  <h2 style="color: #cc0000;">Support the Movement</h2>
+  <h2>Support the Movement</h2>
   <p>If you're loving the vibes, help keep the station flying high. Every tip helps us keep the music alive and independent.</p>
-  <a href="https://paypal.me/OnlyTheDronely?country.x=GB&locale.x=en_GB" target="_blank" style="display: inline-block; background: linear-gradient(to right, #ff0000, #ffcc00, #00cc44); color: black; font-weight: bold; padding: 0.9rem 1.5rem; border-radius: 8px; text-decoration: none; margin-top: 1rem; box-shadow: 0 0 10px #000;">Send a Tip via PayPal</a>
+  <a class="button-link" href="https://paypal.me/OnlyTheDronely?country.x=GB&locale.x=en_GB" target="_blank">Send a Tip via PayPal</a>
 </section>
 
 <nav>
@@ -131,7 +168,7 @@
   <a href="#memories">Memories</a>
 </nav>
 
-<section id="about" style="padding: 2em;">
+<section id="about">
   <h2>🎧 About OnlyTheDronely</h2>
   <p>Welcome to <strong>OnlyTheDronely FM</strong>, where reggae memories take flight. This is more than just a blog or a TikTok account — it’s a digital home for the sounds that shaped generations.</p>
   <p>We honour the legends of reggae, lovers rock, ska, and sound system culture while connecting them with the world today through storytelling and visuals.</p>
@@ -151,7 +188,7 @@
     <button type="submit">Submit Your Memory</button>
   </form>
   <div id="recent-memories" style="margin-top: 2em;">
-    <h3>📖 Recent Memories</h3>
+    <h3 style="color: #ffe600;">📖 Recent Memories</h3>
     <div id="memories-list">
       <div><p><strong>Maxine from Tooting:</strong> “My uncle blasting Alton Ellis every Friday — that bassline shook the street!”</p></div>
       <div><p><strong>Trevor from Peckham:</strong> “The Specials live in '81 — changed my life forever.”</p></div>
@@ -169,7 +206,7 @@
   </div>
 </section>
 
-<section id="contact" style="padding: 2em;">
+<section id="contact">
   <h2>Contact</h2>
   <form action="https://formspree.io/f/mrblelzd" method="POST">
     <input type="text" name="name" placeholder="Your Name" required />
